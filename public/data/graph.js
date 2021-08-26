@@ -3,10 +3,11 @@
 console.log(window.anychart);
 
 let arrayOfData;
+const api = process.env.API_URL;
 const makeCountByRaceChart = async() => {
 
   const getCountByRace = async() => {
-    return fetch('https://mult-co-jail-data.herokuapp.com/api/v1/persons/countbyrace')
+    return fetch(`${api}persons/countbyrace`)
       .then((response) => {
         return response.json();
       });
@@ -33,7 +34,7 @@ const makeCountByRaceChart = async() => {
 const makeCountByTimeChart = async() => {
 
   const getCountByTime = async() => {
-    return fetch('https://mult-co-jail-data.herokuapp.com/api/v1/detentions/countByTime')
+    return fetch(`${api}detentions/countByTime`)
       .then((response) => {
         return response.json();
       });
@@ -60,7 +61,7 @@ const makeCountByTimeChart = async() => {
 const makeDurationByRaceChart = async() => {
 
   const getDurationByRace = async() => {
-    return fetch('https://mult-co-jail-data.herokuapp.com/api/v1/detentions/avgDetentionByRace')
+    return fetch(`${api}detentions/avgDetentionByRace`)
       .then((response) => {
         return response.json();
       });
@@ -90,7 +91,7 @@ const makeDurationByRaceChart = async() => {
 const makeCountByGenderChart = async() => {
 
   const getCountByGender = async() => {
-    return fetch('https://mult-co-jail-data.herokuapp.com/api/v1/persons//countByGender')
+    return fetch(`${api}persons//countByGender`)
       .then((response) => {
         return response.json();
       });

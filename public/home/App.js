@@ -1,14 +1,15 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
+const api = process.env.API_URL;
 
 
 class App extends Component {
-
+    
   onRender(dom) {
     const header = new Header();
     dom.prepend(header.renderDOM());
   }
-
+    
   renderHTML() {
     return /*html*/`
         <div>
@@ -23,54 +24,54 @@ class App extends Component {
                     <ul>
                     <h3>Person Routes</h3>
                         <li>
-                        <span class="routes">Get ALL persons - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/persons" target="_blank">https://mult-co-jail-data.herokuapp.com/api/v1/persons</a>
+                        <span class="routes">Get ALL persons - </span><a class="paths" href="${api}persons" target="_blank">https://mult-co-jail-data.herokuapp.com/api/v1/persons</a>
                         </li>
                         <li>
-                        <span class="routes">Query person subsets by keys - <a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/persons/?race=White" target="_blank">/?race=White</a> or <a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/persons/?gender=Male" target="_blank">/?gender=Male</a>
+                        <span class="routes">Query person subsets by keys - <a class="paths" href="${api}persons/?race=White" target="_blank">/?race=White</a> or <a class="paths" href="${api}persons/?gender=Male" target="_blank">/?gender=Male</a>
                         </li>
                         <li>
-                        <span class="routes">Get count by RACE - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/persons/countByRace" target="_blank">/countByRace</a>
+                        <span class="routes">Get count by RACE - </span><a class="paths" href="${api}persons/countByRace" target="_blank">/countByRace</a>
                         </li>
                         <li>
-                        <span class="routes">Get count by GENDER - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/persons/countByGender" target="_blank">/countByGender</a>
+                        <span class="routes">Get count by GENDER - </span><a class="paths" href="${api}persons/countByGender" target="_blank">/countByGender</a>
                         </li>
                         <li>
-                        <span class="routes">Get count by AGE - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/persons/countByAgeRange" target="_blank">/countByAgeRange</a>
+                        <span class="routes">Get count by AGE - </span><a class="paths" href="${api}persons/countByAgeRange" target="_blank">/countByAgeRange</a>
                         </li>
 
                         <h3>Detention Routes</h3>
                         <li>
-                        <span class="routes">Get ALL detentions - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions" target="_blank">https://mult-co-jail-data.herokuapp.com/api/v1/detentions</a>
+                        <span class="routes">Get ALL detentions - </span><a class="paths" href="${api}detentions" target="_blank">${api}detentions</a>
                         </li>
                         <li>
-                        <span class="routes">Query detention subsets by keys - <a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/?arrestingAgency=Gresham+Police+Department" target="_blank">/?arrestingAgency=Gresham+Police+Department</a>
+                        <span class="routes">Query detention subsets by keys - <a class="paths" href="${api}detentions/?arrestingAgency=Gresham+Police+Department" target="_blank">/?arrestingAgency=Gresham+Police+Department</a>
                         </li>
                         <li>
-                        <span class="routes">Get count by AGENCY - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/countByAgency" target="_blank">/countByAgency</a>
+                        <span class="routes">Get count by AGENCY - </span><a class="paths" href="${api}detentions/countByAgency" target="_blank">/countByAgency</a>
                         </li>
                         <li>
-                        <span class="routes">Get count by BOOKING TIME - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/countByTime" target="_blank">/countByTime</a>
+                        <span class="routes">Get count by BOOKING TIME - </span><a class="paths" href="${api}detentions/countByTime" target="_blank">/countByTime</a>
                         </li>
                         <li>
-                        <span class="routes">Get average detention DURATION - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/avgDetentionDuration" target="_blank">/avgDetentionDuration</a>
+                        <span class="routes">Get average detention DURATION - </span><a class="paths" href="${api}detentions/avgDetentionDuration" target="_blank">/avgDetentionDuration</a>
                         </li>
                         <li>
-                        <span class="routes">Get average duration by RACE - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/avgDetentionByRace" target="_blank">/avgDetentionByRace</a>
+                        <span class="routes">Get average duration by RACE - </span><a class="paths" href="${api}detentions/avgDetentionByRace" target="_blank">/avgDetentionByRace</a>
                         </li>
                         <li>
-                        <span class="routes">Get average detention by GENDER - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/avgDetentionByGender" target="_blank">/avgDetentionByGender</a>
+                        <span class="routes">Get average detention by GENDER - </span><a class="paths" href="${api}detentions/avgDetentionByGender" target="_blank">/avgDetentionByGender</a>
                         </li>
                         <li>
-                        <span class="routes">Get CHARGE count by RACE - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/countChargesByRace" target="_blank">/countChargesByRace</a>
+                        <span class="routes">Get CHARGE count by RACE - </span><a class="paths" href="${api}detentions/countChargesByRace" target="_blank">/countChargesByRace</a>
                         </li>
                         <li>
-                        <span class="routes">Get charge count by AGENCY - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/countChargesByAgency" target="_blank">/countChargesByAgency</a>
+                        <span class="routes">Get charge count by AGENCY - </span><a class="paths" href="${api}detentions/countChargesByAgency" target="_blank">/countChargesByAgency</a>
                         </li>
                         <li>
-                        <span class="routes">Get charge count by GENDER- </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/detentions/countChargesByGender" target="_blank">/countChargesByGender</a>
+                        <span class="routes">Get charge count by GENDER- </span><a class="paths" href="${api}detentions/countChargesByGender" target="_blank">/countChargesByGender</a>
                         </li>
                         <li>
-                        <span class="routes">Get ALL court cases - </span><a class="paths" href="https://mult-co-jail-data.herokuapp.com/api/v1/courtCases" target="_blank">https://mult-co-jail-data.herokuapp.com/api/v1/courtCases</a>
+                        <span class="routes">Get ALL court cases - </span><a class="paths" href="${api}courtCases" target="_blank">/courtCases</a>
                         </li>
                     </ul>
 
