@@ -3,7 +3,7 @@
 console.log(window.anychart);
 
 let arrayOfData;
-const api = process.env.API_URL;
+const api = 'https://jail-data-pdx.herokuapp.com/api/v1/';
 const makeCountByRaceChart = async() => {
 
   const getCountByRace = async() => {
@@ -75,7 +75,7 @@ const makeDurationByRaceChart = async() => {
     });
   });
 
-  // console.log(arrayOfData);
+  console.log(arrayOfData, 'array of data');
 
   // eslint-disable-next-line
   const chart = anychart.bar();
