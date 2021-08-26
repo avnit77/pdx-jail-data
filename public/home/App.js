@@ -1,6 +1,5 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
-const api = process.env.API_URL;
 
 
 class App extends Component {
@@ -11,6 +10,7 @@ class App extends Component {
   }
     
   renderHTML() {
+    const api = 'https://jail-data-pdx.herokuapp.com/api/v1/';
     return /*html*/`
         <div>
             <!-- header goes here -->
